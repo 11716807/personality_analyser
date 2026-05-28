@@ -1,0 +1,427 @@
+.bot-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--color-0);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  resize: none;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+}
+
+.bot-dropdown {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--color-0);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bot-submit {
+  padding: 6px 12px;
+  background-color: var(--color-2);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: var(--font-poppins);
+}
+
+.bot-submit:hover {
+  background-color: var(--color-4);
+}
+
+::placeholder {
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  color: var(--placeholder-color);
+}
+
+/*.messages-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    padding-right: 15px;
+    border-top: 3px solid var(--color-1);
+    border-bottom: 3px solid var(--color-1);
+    padding-top: 8px;
+}*/
+
+.message-card {
+  background-color: white;
+  border: 1px solid var(--color-0);
+  border-radius: 4px;
+  padding: 10px;
+  padding-right: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.message-content {
+  flex-grow: 1;
+  margin-right: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  user-select: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  color: var(--fg-color);
+}
+
+.remove-button {
+  background-color: var(--error-color-1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 8px;
+  transition: background-color 0.2s;
+  margin-left: 8px;
+}
+
+.remove-button:hover {
+  background-color: var(--error-color-2);
+}
+
+.messages-placeholder {
+  color: var(--placeholder-color);
+  font-size: 14px;
+  text-align: justify-all;
+  padding: 5px 0;
+}
+
+.hide-button {
+  position: fixed;
+  background-color: var(--color-1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.2s;
+  padding: 0;
+}
+
+.hide-button::after {
+  content: 'Hide';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-delay: 0.8s;
+}
+
+.hide-button:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hide-button:not(:hover)::after {
+  transition-delay: 0s;
+}
+
+.hide-button:hover {
+  background-color: var(--color-3);
+}
+
+/* Specifically for the message content */
+.message-content::selection {
+  background-color: var(--color-0);
+}
+
+.message-content::-moz-selection {
+  background-color: var(--color-0);
+}
+
+.bot-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.input-section,
+.response-section {
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.input-section {
+  transform: translateX(0);
+}
+
+.response-section {
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  height: 100%;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.response-section button.back-button {
+  position: absolute;
+  top: -20px;
+  left: 20px !important;
+}
+
+.bot-content.show-response .input-section {
+  transform: translateX(-100%);
+}
+
+.show-response .input-section, .show-response .brand-icons{
+  display: none;
+}
+
+.response-section button.back-button {
+  position: absolute;
+  top: -20px;
+  left: 0px;
+}
+
+.bot-content.show-response .response-section {
+  transform: translateX(0);
+}
+
+.back-button {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  color: var(--color-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.response-content {
+  padding: 20px 10px;
+  font-family: var(--font-poppins);
+  line-height: 1.6;
+  color: var(--fg-color);
+  white-space: pre-wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: 0.4s;
+}
+
+.bot-content.show-response .response-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.assistant-header {
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detected-user-button {
+  background-color: var(--color-2); /* Match the background of the Ask button */
+  color: white; /* Match the text color of the Ask button */
+  border: none; /* Ensure no border like the Ask button */
+  border-radius: 8px; /* Match the border radius */
+  padding: 6px 12px; /* Adjust padding for smaller size */
+  margin: 4px; /* Add spacing between buttons */
+  font-size: 14px; /* Text size matching the Ask button */
+  font-family: var(--font-poppins); /* Match font */
+  font-weight: 600; /* Same font weight as Ask button */
+  cursor: pointer; /* Pointer cursor for hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  display: inline-flex; /* Align icon and text inline */
+  align-items: center; /* Vertically center content */
+}
+
+.detected-user-button:hover {
+  background-color: var(--color-4); /* Match the hover color of the Ask button */
+}
+
+.detected-user-button svg {
+  margin-left: 8px; /* Space between text and cross icon */
+  font-size: 12px; /* Adjust icon size */
+}
+
+/* Detected Users Section */
+.detected-users-section {
+  margin-top: 20px;
+}
+
+.detected-users {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detected-user-button {
+  background-color: var(--color-2); /* Match ask button color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.detected-user-button:hover {
+  background-color: var(--color-4); /* Match ask button hover color */
+}
+
+.add-user-button {
+  background-color: var(--color-2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-user-button:hover {
+  background-color: var(--color-4);
+}
+
+.add-user-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.add-user-input {
+  flex-grow: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--color-0);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-poppins);
+}
+
+.confirm-add-user-button {
+  background-color: var(--color-2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-add-user-button:hover {
+  background-color: var(--color-4);
+}
+
+.cancel-add-user-button {
+  margin-left: 8px;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.footer-container {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+  margin: 0 5px;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.brand-icons {
+  display: flex;
+  justify-content: space-evenly; /* Ensures equal spacing between items */
+  align-items: center;
+  padding: 10px 0; /* Add padding for vertical alignment */
+}
+
+.brand-icons .custom-link {
+  text-decoration: none; /* Removes underline from links */
+}
+
+.brand-icons i {
+  font-size: 2rem; /* Increase the icon size */
+  color:  grey; /* Adjust color as needed */
+  margin: 0 10px; /* Optional: Add consistent margin around icons */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.brand-icons i:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+  color:  #ff7d2e;
+}
+
+.strategy-selector-panel {
+
+}
+
+.strategy-selector-panel h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg-color);
+  margin-bottom: 8px;
+}
+
+.strategy-dropdown {
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 2px solid #ff8000;
+  background-color: #ffcc80;
+  color: #663300;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+}

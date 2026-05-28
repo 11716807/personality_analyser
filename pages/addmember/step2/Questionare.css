@@ -1,0 +1,13 @@
+.slider-label {
+  position: relative;
+  top: -10px; /* Adjust the distance as necessary */
+  font-size: 14px;
+}
+
+.slider-label:first-child {
+  left: 0;
+}
+
+.slider-label:last-child {
+  right: 0;
+}

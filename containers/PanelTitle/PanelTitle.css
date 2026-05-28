@@ -1,0 +1,17 @@
+.panel-title-container {
+  margin-bottom: 20px;
+}
+
+.panel-title {
+  color: var(--color-3);
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-family: var(--font-poppins);
+}
+
+.panel-title-separator {
+  height: 1px;
+  background-color: var(--color-0);
+  width: 100%;
+}

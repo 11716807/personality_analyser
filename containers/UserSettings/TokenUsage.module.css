@@ -1,0 +1,33 @@
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.chartContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.labels {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.labels div {
+  margin-bottom: 5px;
+}

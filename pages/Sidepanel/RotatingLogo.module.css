@@ -1,0 +1,20 @@
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* Adds depth */
+}
+
+.rotatingLogo {
+  animation: rotate3D 3s linear infinite; /* 3s continuous rotation */
+  transform-origin: center;
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

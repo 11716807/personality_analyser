@@ -1,0 +1,62 @@
+.message-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Default (Collapsed) State */
+.message-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  white-space: normal;
+  flex: 1;
+}
+
+/* Collapsed View (Truncated) */
+.message-content.collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;  /* 👈 Changed from 2 to 3 */
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+/* Expanded View (Full text) */
+.message-content.expanded {
+  display: block;
+  white-space: normal;
+}
+
+/* Expand/Collapse Button */
+.view-toggle {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  font-size: 14px;
+}
+
+/* Remove Button */
+.remove-button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 14px;
+}

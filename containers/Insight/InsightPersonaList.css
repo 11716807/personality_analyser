@@ -1,0 +1,179 @@
+.persona-list, .channel-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.persona-card {
+  background-color: white;
+  border: 1px solid var(--color-0);
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.persona-card:hover, .channel-card:hover {
+  background-color: var(--color-0);
+}
+
+.persona-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 15%;
+  border: 2px solid var(--color-1);
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+  object-fit: contain;
+}
+
+.persona-card:hover .persona-avatar {
+  border-color: white;
+}
+
+.persona-info {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  min-width: 0;
+  margin-right: 30px;
+}
+
+.persona-card h3 {
+  margin: 0;
+  color: var(--color-3);
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.persona-username {
+  margin: 2px 0 0 0;
+  color: var(--placeholder-color);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.persona-username-label {
+  border: 1px solid;
+  display: table;
+  padding: 0px 5px;
+  border-radius: 5px;
+  color: gray;
+  font-size: 10px;
+}
+
+.empty-message {
+  color: var(--placeholder-color);
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+  grid-column: 1 / -1;
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Search box style for insight page */
+.search-container {
+  position: relative;
+  width: 100%;
+  margin: 10px auto;
+  padding-right: 5px;
+}
+
+.insight-search-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Search Box Styling */
+.search-box {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* Extra padding on the right for the icon */
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Search Icon inside the input */
+.search-icon {
+  position: absolute;
+  right: 15px; /* Position the icon inside the input box */
+  top: 50%;
+  transform: translateY(-50%); /* Center the icon vertically */
+  font-size: 18px;
+  color: #aaa; /* Icon color */
+  pointer-events: none; /* Make sure the icon doesn't interfere with typing */
+}
+
+/* Focus Effect */
+.search-box:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+}
+
+/* Placeholder Styling */
+.search-box::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+  .search-box {
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
+
+.loading-spinner {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.spinner-icon {
+  color: var(--color-1);
+  font-size: 1.5em;
+}
+
+.spinner-icon-small {
+  color: var(--color-1);
+  font-size: 1.1em;
+}
+
+.spinner-icon-large {
+  color: var(--color-1);
+  font-size: 2.1em;
+}
+
+.limited-view-container {
+  position: relative; /* Required for positioning child elements */
+  z-index: 1;
+}
+
+.blur-overlay {
+  position: relative;
+  top: 0;
+  z-index: 0; /* Ensure it's beneath the limited view container */
+  height: 100%; /* Adjust height as necessary */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Light blur overlay effect */
+  backdrop-filter: blur(10px); /* The actual blur effect */
+}
+
